@@ -13,6 +13,7 @@ import com.lpsmuseum.dto.Museum;
 import com.lpsmuseum.dto.Scenario;
 import com.lpsmuseum.dto.object.Image;
 import com.lpsmuseum.service.AnnotationService;
+import com.lpsmuseum.service.ImageService;
 import com.lpsmuseum.service.MuseologicalObjectService;
 import com.lpsmuseum.service.MuseumService;
 import com.lpsmuseum.service.ScenarioService;
@@ -48,9 +49,12 @@ public class MuseumController {
     public ModelAndView info(Long obj)
     {
         AnnotationService s = new AnnotationService();
+        ImageService serv = new ImageService();
+        Image ob = serv.findById(obj);
         List<Annotation> a = s.listByObject(obj);
         ModelAndView mv = new ModelAndView("info");
         mv.addObject("obj",a.get(0));
+        mv.addObject("name",ob.getName());
         mv.addObject("id",obj);
         return mv;
     }

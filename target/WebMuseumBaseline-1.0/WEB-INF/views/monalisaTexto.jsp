@@ -38,7 +38,7 @@
       </article>
       <section id="menuObject">
 	<ul>
-	  <li><i class="fa fa-undo"></i><a class="iconTextObject" href="index.htm">Voltar</a></li>
+	  <li><i class="fa fa-undo"></i><a class="iconTextObject" href="/webmuseum/">Voltar</a></li>
 	</ul>
       </section>
     </div>

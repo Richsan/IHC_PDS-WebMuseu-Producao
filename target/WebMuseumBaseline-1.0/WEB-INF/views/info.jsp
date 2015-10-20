@@ -23,7 +23,7 @@
 	<h2>Museu</h2>
 	<div><a class="nameMenu">Menu</a> <i class=" headerMenu fa fa-bars" id="simple-menu"  href="#sidr-main"></i></div>
       </header>
-      <section id="objectName"><h1>Monalisa - Informações</h1></section>
+      <section id="objectName"><h1>${name} - Informações</h1></section>
       <article>
 	${obj.getContent()}
       </article>
