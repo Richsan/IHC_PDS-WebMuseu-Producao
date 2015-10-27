@@ -6,7 +6,7 @@ Arquivo de LPS nao está incluso no repositório necessário obtê-lo por outros
 
 # Links para Acompanhamento
 
-Kanban-chi: https://drive.google.com/file/d/0B1q2EX9Vtu2CNWUyOTZwdkZDTnc/view
+Kanban-chi: https://kanban-chi.appspot.com/dashboard/4583867504656384/d-4583867504656384
 
 Site/blog da fábrica: http://filipesrocchi.wix.com/ncsoftwares
 
