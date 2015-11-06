@@ -25,8 +25,7 @@ import java.util.List;
 
 @Controller
 public class MuseumController {
-    
-    MuseumService service = new MuseumService();
+	MuseumService service = new MuseumService();
     
     @RequestMapping("/")
     public ModelAndView startApp(Long id) {
