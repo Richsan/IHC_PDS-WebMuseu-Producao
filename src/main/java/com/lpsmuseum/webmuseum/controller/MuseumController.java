@@ -25,7 +25,7 @@ import java.util.List;
 
 @Controller
 public class MuseumController {
-    
+
     MuseumService service = new MuseumService();
     
     @RequestMapping("/")
