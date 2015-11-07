@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.lpsmuseum.dto.Annotation"%>
 
@@ -13,20 +12,13 @@
 		<script src="/webmuseum/resources/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="/webmuseum/resources/stylesheet/allmedia.css" />
 		<link rel="stylesheet" type="text/css" href="/webmuseum/resources/font-awesome-4.4.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="/webmuseum/resources/font-awesome-4.4.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="/webmuseum/resources/sidr/stylesheets/jquery.sidr.dark.css">
-		<script src="resources/sidr/jquery.sidr.min.js"></script>
+		<script src="/webmuseum/resources/sidr/jquery.sidr.min.js"></script>
 	</head>
 	
 	<body>
 		<div id="wraper">
-			<header>
-				<h2>Museu</h2>
-				<a class="nameMenu" href="#sidr-main">
-					Menu
-					<div class="headerMenu fa fa-bars" id="simple-menu"  ></div>
-				</a>
-			</header>
+			<%@ include file="include/headerMenu.jsp" %>
 			
 			<section id="objectName">
 				<h1>${name} - Informações</h1>
@@ -48,9 +40,5 @@
 			</section>
 		</div>
 	</body>
-	
-	<script>
-		$('#simple-menu').sidr({side: 'left', displace: false});
-	</script>
 </html>
 

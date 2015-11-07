@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.lpsmuseum.dto.object.Image"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="pags" %>
 
 <!DOCTYPE html>
@@ -9,17 +9,18 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>Objeto Museologico</title>
-		<meta name="description" content="The HTML5 Herald" />
+		<meta name="description" content="" />
 		<meta name="author" content="" />
 		<meta name="viewport" content="width=device-width">
 		<script src="resources/jquery.min.js"></script>
-		<script src="resources/slider/jquery.bxslider.min.js"></script>
-		<link href="resources/slider/jquery.bxslider.css" rel="stylesheet" />
-		<script type="text/javascript" src="resources/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="resources/stylesheet/allmedia.css" />
 		<link rel="stylesheet" type="text/css" href="resources/font-awesome-4.4.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="resources/sidr/stylesheets/jquery.sidr.dark.css">
 		<script src="resources/sidr/jquery.sidr.min.js"></script>
+		
+		<script type="text/javascript" src="resources/script.js"></script>
+		<script src="resources/slider/jquery.bxslider.min.js"></script>
+		<link href="resources/slider/jquery.bxslider.css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -35,21 +36,7 @@
 				</div>
 			</div>
 
-			<div id="sidr">
-
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li class="active"><a href="#">Exibiçoes</a></li>
-				</ul>
-			</div>
-
-			<header>
-				<h2>Museu</h2>
-				<a class="nameMenu" href="#sidr-main">
-					Menu
-					<div class="headerMenu fa fa-bars" id="simple-menu"  ></div>
-				</a>
-			</header>
+			<%@ include file="include/headerMenu.jsp" %>
 			
 			<section id="objectName">
 				<h1>Monalisa</h1>
@@ -103,7 +90,7 @@
 					</li>
 					
 					<li>
-						<a class="iconTextObject" href="texto0.htm" id="ler">
+						<a class="iconTextObject" href="texto0.htm" id="desafio">
 							<div class="fa fa-puzzle-piece"></div>
 							Desafio
 						</a>
