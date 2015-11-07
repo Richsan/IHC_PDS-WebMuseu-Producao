@@ -67,5 +67,9 @@ public class MuseumController {
         return mv;
     }
 
-    
+    @RequestMapping("cenarios")
+    public ModelAndView cenarios()
+    {
+        return new ModelAndView("cenarios");
+    }
 }
