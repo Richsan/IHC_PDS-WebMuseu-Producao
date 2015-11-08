@@ -18,7 +18,7 @@
 	<body>
 		<%@ include file="include/headerMenu.jsp" %>
 
-		<section id="objectName"><h1>A Liberdade Guiando o Povo - Texto</h1></section>
+		<section id="titleObject"><h1>A Liberdade Guiando o Povo - Texto</h1></section>
 
 		<article>
 			<p>A Liberdade Guiando o Povo (em francês: La Liberté guidant le peuple) é uma pintura de Eugène Delacroix em comemoração à Revolução de Julho de 1830, com a queda de Carlos X.[1] Uma mulher representando a Liberdade, guia o povo por cima dos corpos dos derrotados, levando a bandeira tricolor da Revolução francesa em uma mão e brandindo um mosquete com baioneta na outra.[1] A pintura é talvez a obra mais conhecida de Delacroix.</p>

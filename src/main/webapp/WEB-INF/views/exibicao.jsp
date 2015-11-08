@@ -38,7 +38,7 @@
 
 			<%@ include file="include/headerMenu.jsp" %>
 			<div id="cenarioId" hidden>${id}</div>
-			<section id="objectName">
+			<section id="titleObject">
 				<h1>${objList.get(0).getName()}</h1>
 			</section>
 			

@@ -18,7 +18,7 @@
 	<body>
 		<%@ include file="include/headerMenu.jsp" %>
 
-		<section id="objectName"><h1>Monalisa - Texto</h1></section>
+		<section id="titleObject"><h1>Monalisa - Texto</h1></section>
 
 		<article>
 			<p>Mona Lisa (ou La Gioconda) é uma famosíssima obra de arte feita pelo italiano Leonardo da Vinci. O quadro, no qual foi utilizada a técnica do sfumato, retrata a figura de uma mulher com um sorriso tímido e uma expressão introspectiva.</p>

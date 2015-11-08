@@ -20,8 +20,8 @@
 		<div id="wraper">
 			<%@ include file="include/headerMenu.jsp" %>
 		
-			<section id="objectName">
-				<h1>Bem Vindo!!</h1>
+			<section id="titleObject">
+				<h1>Bem-vindo!</h1>
 			</section>			
 			
 		</div>

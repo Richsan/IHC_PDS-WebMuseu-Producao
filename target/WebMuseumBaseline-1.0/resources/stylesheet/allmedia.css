@@ -121,7 +121,7 @@ header #headerMenuLink #headerMenuBars
 }
 
 
-#objectName
+#titleObject
 {
     text-align: center;
     color: black;
@@ -193,8 +193,16 @@ header #headerMenuLink #headerMenuBars
     background: black !important;
 }
 
+#listaCenarios
+{
+	margin-top: 60px;
+}
+
 #listaCenarios ul
 {
+	margin: auto;
+	width: 75%;
+	max-width: 400px;
     display: block;
     list-style: none;
     padding-left: 0;
@@ -205,10 +213,13 @@ header #headerMenuLink #headerMenuBars
 }
 #listaCenarios ul li
 {
-    height: 60px;
-    border: #CFC9B2 solid;
-    padding-top: 2px;
+	margin-bottom:2em;
+	padding-top: 1.3em;
+    height: 40px;
+		
     background-color: #004242;
     color: #fff;
+	
     text-shadow: 1px 1px 1px #000;
+	text-align: center;
 }

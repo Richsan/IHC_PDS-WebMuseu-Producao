@@ -21,7 +21,7 @@
 			<%@ include file="include/headerMenu.jsp" %>
 		
                         <div id="cenarioId" hidden>${cenarioId}</div>
-			<section id="objectName">
+			<section id="titleObject">
 				<h1>${name} - Informações</h1>
 			</section>
 			

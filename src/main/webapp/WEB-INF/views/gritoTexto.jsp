@@ -18,7 +18,7 @@
 	<body>
 		<%@ include file="include/headerMenu.jsp" %>
 
-		<section id="objectName"><h1>O Grito - Texto</h1></section>
+		<section id="titleObject"><h1>O Grito - Texto</h1></section>
 
 		<article>
 			<p>A fonte de inspiração de O Grito pode ser encontrada na vida pessoal do próprio Munch, um homem educado por um pai controlador, que assistiu quando criança à morte da mãe e de uma irmã. Decidido a lutar pelo sonho de se dedicar à pintura, Munch cortou relações com o pai e integrou a cena artística de Oslo. A escolha não lhe trouxe a paz desejada, bem pelo contrário. Munch acabou por se envolver com uma mulher casada que só lhe trouxe mágoa e desespero e no início da década de 1890, Laura a sua irmã favorita, foi diagnosticada com doença bipolar e internada num asilo psiquiátrico. O seu estado de espírito está bem patente nas linhas que escreveu no seu diário:</p>

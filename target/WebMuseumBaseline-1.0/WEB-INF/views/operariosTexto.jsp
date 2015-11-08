@@ -18,7 +18,7 @@
 	<body>
 		<%@ include file="include/headerMenu.jsp" %>
 
-		<section id="objectName"><h1>Operários - Texto</h1></section>
+		<section id="titleObject"><h1>Operários - Texto</h1></section>
 
 		<article>
                     <p>A pintora Tarsila do Amaral expressa o mundo do trabalho:um grande número de rostos colocados lado a lado,todos sérios;nenhum sorriso,pois a preocupação não deixa lugar para a alegria.São pessoas que nos olham fixamente como a nos lembrar que é duro o trabalho nas fábricas,presentes na obra sob a forma de um prédio austero e chaminés cinzentas.A obra é um raro exemplo da etnia brasileira.Por isso foi escolhida para representar os museus frente ao diálogo intercultural,do pluralismo de ideias,do desenvolvimento humano e do respeito à diversidade.</p>

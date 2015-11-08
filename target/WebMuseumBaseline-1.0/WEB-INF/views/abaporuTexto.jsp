@@ -18,7 +18,7 @@
 	<body>
 		<%@ include file="include/headerMenu.jsp" %>
 
-		<section id="objectName"><h1>Abaporu - Texto</h1></section>
+		<section id="titleObject"><h1>Abaporu - Texto</h1></section>
 
 		<article>
                     <p>Abaporu hoje é a tela brasileira mais valorizada no mundo, tendo alcançado o valor de US$ 2,5 milhões, pago pelo colecionador argentino Eduardo Costantin em 1995 em leilão realizado na Christies, o quadro pertencia ao empresário brasileiro Raul Fobes, desde 1985. Encontra-se exposta no Museu de arte latino-americana de Buenos Aires (MALBA).</p> 

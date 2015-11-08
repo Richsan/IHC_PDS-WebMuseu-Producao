@@ -18,7 +18,7 @@
 	<body>
 		<%@ include file="include/headerMenu.jsp" %>
 
-		<section id="objectName"><h1>Crianca Morta - Texto</h1></section>
+		<section id="titleObject"><h1>Crianca Morta - Texto</h1></section>
 
 		<article>
                     <p>Criança Morta de Cândido Portinari,que faz parte da série sobre os retirantes nordestinos tem sua carga dramática potencializada pela composição do quadro - um agrupamento humano do qual se projeta a criança morta.
