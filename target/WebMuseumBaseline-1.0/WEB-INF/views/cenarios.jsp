@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lpsmuseum.dto.Scenario"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="pags" %>
 
@@ -6,7 +8,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8"/>
-    <title>Cenários</title>
+    <title>Exibições</title>
     <meta name="description" content="" />
     <meta name="author" content="" />
     <meta name="viewport" content="width=device-width">
@@ -21,25 +23,13 @@
   
   <body>
     <div id="wraper">
-      	       
-      <div id="sidr">
-        <ul>
-        <li><a href="#">Home</a></li>
-        <li class="active"><a href="#">Exibiçoes</a></li>
-        </ul>
-      </div>
-    
-      <header>
-	<h2>Museu</h2>
-	<div><a class="nameMenu">Menu</a> <i class=" headerMenu fa fa-bars" id="simple-menu"  href="#sidr-main"></i></div>
-      </header>
-      
-      <section id="listaCenarios">
+    <%@ include file="include/headerMenu.jsp" %>  
+        <h1 id="objectName">Exibições</h1>
+        <section id="listaCenarios">
           <ul>
-              <li>Nome cenário 1</li>
-              <li>Nome cenário 2</li>
-              <li>Nome cenário 3</li>
-              <li>Nome cenário 4</li>
+              <c:forEach items="${listaCenarios}" var="obj">
+                  <a href="/webmuseum/exibicao?id=${obj.getId()}"><li> ${obj.getName()} </li></a>
+               </c:forEach>
           </ul>
       </section>
     </div>

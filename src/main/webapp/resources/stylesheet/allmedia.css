@@ -192,3 +192,23 @@ header #headerMenuLink #headerMenuBars
 {
     background: black !important;
 }
+
+#listaCenarios ul
+{
+    display: block;
+    list-style: none;
+    padding-left: 0;
+}
+#listaCenarios ul a
+{
+    text-decoration: none;
+}
+#listaCenarios ul li
+{
+    height: 60px;
+    border: #CFC9B2 solid;
+    padding-top: 2px;
+    background-color: #004242;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}

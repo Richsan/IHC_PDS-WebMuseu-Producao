@@ -18,7 +18,7 @@ function desajustarImg()
 	var img = document.getElementById("imgView");
 	img.style.width = img.naturalWidth + "px";
 	img.style.height = img.naturalHeight + "px";
-	var bt = document.getElementById("resizeBt")
+	var bt = document.getElementById("resizeBt");
 	bt.innerHTML = "Ajustar";
 	bt.onclick = ajustarImg;
 
@@ -41,6 +41,8 @@ function visualizar()
 
 function docReady()
 {
+    
+       var cenarioId = document.getElementById("cenarioId").innerHTML;
 	function slideTransition(_, _, newIdx)
 	{
 		var info, text, name, view;
@@ -51,7 +53,7 @@ function docReady()
 		name = document.getElementById("objectName");
 		imgUrl = document.getElementById("img" + newIdx).src;
 		
-		info.href = "/webmuseum/info/?obj=" + document.getElementById("objCode" + newIdx).innerHTML;
+		info.href = "/webmuseum/info/?obj=" + document.getElementById("objCode" + newIdx).innerHTML+"&cenarioId="+cenarioId;
 		text.href = "/webmuseum/text?id=" + document.getElementById("objCode" + newIdx).innerHTML;
 		view.src = imgUrl;
 

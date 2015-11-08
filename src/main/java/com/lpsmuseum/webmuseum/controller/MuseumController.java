@@ -29,24 +29,29 @@ public class MuseumController {
     MuseumService service = new MuseumService();
     
     @RequestMapping("/")
-    public ModelAndView startApp(Long id) {
+    public ModelAndView startApp(Long id){
+        return new ModelAndView("index");
+    }
+    
+    @RequestMapping("exibicao")
+    public ModelAndView exibicao(Long id) {
         
        //Museum m = service.findById(new Long(0));
         ScenarioService serv = new ScenarioService();
-        Scenario s = serv.findById(new Long(1l));
+        Scenario s = serv.findById(id);
         List<MuseologicalObject> list = s.getObjects();
-        ModelAndView mv = new ModelAndView("index");
+        ModelAndView mv = new ModelAndView("exibicao");
         mv.addObject("objList", list);
         if(id != null)
             mv.addObject("id", id);
         else
-            mv.addObject("id", 0);
+            mv.addObject("id", 1);
                     
         return mv;
     }
     
     @RequestMapping("info")
-    public ModelAndView info(Long obj)
+    public ModelAndView info(Long obj, Long cenarioId)
     {
         AnnotationService s = new AnnotationService();
         ImageService serv = new ImageService();
@@ -54,6 +59,7 @@ public class MuseumController {
         List<Annotation> a = s.listByObject(obj);
         ModelAndView mv = new ModelAndView("info");
         mv.addObject("obj",a.get(0));
+        mv.addObject("cenarioId",cenarioId);
         mv.addObject("name",ob.getName());
         mv.addObject("id",obj);
         return mv;
@@ -70,6 +76,9 @@ public class MuseumController {
     @RequestMapping("cenarios")
     public ModelAndView cenarios()
     {
-        return new ModelAndView("cenarios");
+        List<Scenario> listaCenarios = service.listScenariosByMuseumId(1l);
+        ModelAndView mv = new ModelAndView("cenarios");
+        mv.addObject("listaCenarios", listaCenarios);
+        return mv;
     }
 }

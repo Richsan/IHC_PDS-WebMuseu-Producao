@@ -9,8 +9,8 @@
 
 <div id="sidr">
 	<ul>
-		<li><a href="#">Home</a></li>
-		<li class="active"><a href="#">Exibiçoes</a></li>
+		<li class="active"><a href="/webmuseum/">Home</a></li>
+		<li><a href="/webmuseum/cenarios">Exibiçoes</a></li>
 	</ul>
 </div>
 
