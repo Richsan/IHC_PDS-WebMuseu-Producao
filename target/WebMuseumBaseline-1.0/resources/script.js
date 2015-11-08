@@ -37,6 +37,7 @@ function visualizar()
 {
 	console.log("visu");
 	overlay.show();
+	$(document).scrollTop(0);
 }
 
 function docReady()
@@ -50,7 +51,7 @@ function docReady()
 		info = document.getElementById("info");
 		text = document.getElementById("ler");
 		view = document.getElementById("imgView");
-		name = document.getElementById("objectName");
+		name = document.getElementById("titleObject");
 		imgUrl = document.getElementById("img" + newIdx).src;
 		
 		info.href = "/webmuseum/info/?obj=" + document.getElementById("objCode" + newIdx).innerHTML+"&cenarioId="+cenarioId;
