@@ -34,7 +34,7 @@ public class MuseumController {
     }
     
     @RequestMapping("exibicao")
-    public ModelAndView exibicao(Long id) {
+    public ModelAndView exibicao(Long id, Long imgId) {
         
        //Museum m = service.findById(new Long(0));
         ScenarioService serv = new ScenarioService();
@@ -46,6 +46,11 @@ public class MuseumController {
             mv.addObject("id", id);
         else
             mv.addObject("id", 1);
+		
+		if(imgId != null)
+            mv.addObject("imgId", imgId);
+        else
+            mv.addObject("imgId", 0);
                     
         return mv;
     }

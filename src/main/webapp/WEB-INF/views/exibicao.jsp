@@ -24,7 +24,13 @@
 	</head>
 
 	<body>
+		<script>
+			var cenarioId = ${id};
+			var imgId = ${imgId};
+		</script>
+		
 		<a hidden="true" id="start">${id}</a>
+		
 		<div id="wraper">
 			<div id="overlay">
 				<div id="window">
@@ -37,35 +43,61 @@
 			</div>
 
 			<%@ include file="include/headerMenu.jsp" %>
-			<div id="cenarioId" hidden>${id}</div>
+			
 			<section id="titleObject">
 				<h1>${objList.get(0).getName()}</h1>
 			</section>
 			
-			<c:set var="count" value="0" scope="page" />
-			
-			<ul id="slide">
+			<div id="slideArea">
+				<c:set var="count" value="0" scope="page" />
+				<ul id="slide">
+					<c:forEach items="${objList}" var="obj">
+						<li> <img src="resources/img/${obj.getUrlAddress()}" id="img${count}"></img> </li>
+
+						<c:set var="count" value="${count + 1}" scope="page"/>
+					</c:forEach>
+				</ul>
+
+				<c:set var="count" value="0" scope="page" />
 				<c:forEach items="${objList}" var="obj">
-					<li> <img src="resources/img/${obj.getUrlAddress()}" id="img${count}"></img> </li>
-					
+					<div hidden="true" id="objNameId${count}">
+						${obj.getName()}
+					</div>
+
+					<div hidden="true" id="objCode${count}">
+						${obj.getId()}
+					</div>
+
 					<c:set var="count" value="${count + 1}" scope="page"/>
 				</c:forEach>
-			</ul>
-				
-			<c:set var="count" value="0" scope="page" />
+
+				<!-- botão da galeria em baixo do slide -->
+				<div id="galeriaArea">
+					<a id="galeriaBt" href="#galeriaSidr">
+						<div class="fa fa-th""></div>
+					</a>
+				</div>
+			</div>
 			
-			<c:forEach items="${objList}" var="obj">
-				<a hidden="true" id="objNameId${count}">
-					${obj.getName()}
-				</a>
+			<!-- menu galeria -->
+			<div id="galeriaSidr">
+				<div id="galeriaContainer">
+					<c:set var="count" value="0" scope="page" />
+					<c:forEach items="${objList}" var="obj">
+						<a class="galeriaItem" onclick="selectSlide(${count});"> <!--href="/webmuseum/exibicao?id=${id}&imgId=${count}">-->
+							<img src="resources/img/${obj.getUrlAddress()}" id="img${count}">
+						</a>
+
+						<c:set var="count" value="${count + 1}" scope="page"/>
+					</c:forEach>
+				</div>
+			</div>
+
+			<script>
+				$('#galeriaBt').sidr({name: 'galeriaSidr', side: 'right', source: '#galeriaSidr'});
+			</script>
 				
-				<a hidden="true" id="objCode${count}">
-					${obj.getId()}
-				</a>
-				
-				<c:set var="count" value="${count + 1}" scope="page"/>
-			</c:forEach>
-				
+			<!-- menu inferior -->
 			<section id="menuObject">
 				<ul>
 					<li>

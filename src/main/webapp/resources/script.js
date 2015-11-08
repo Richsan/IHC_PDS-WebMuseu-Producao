@@ -40,11 +40,16 @@ function visualizar()
 	$(document).scrollTop(0);
 }
 
+function selectSlide(num)
+{
+	slide.goToSlide(num);
+	$.sidr('close', 'galeriaSidr');
+}
+
 function docReady()
 {
     
-       var cenarioId = document.getElementById("cenarioId").innerHTML;
-	function slideTransition(_, _, newIdx)
+    function slideTransition(_, _, newIdx)
 	{
 		var info, text, name, view;
 
@@ -66,7 +71,7 @@ function docReady()
 	var init = parseInt(document.getElementById("start").innerHTML);
 	slide = $('#slide').bxSlider(
 			{
-				// startSlide: init,
+				startSlide: imgId,
 				responsive: true,
 				touchEnabled: true,
 				infiniteLoop: false,

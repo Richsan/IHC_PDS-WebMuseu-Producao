@@ -30,7 +30,7 @@
 		<section id="menuObject">
 			<ul>
 				<li>
-					<a class="iconTextObject" href="/webmuseum/?id=2">
+					<a class="iconTextObject" href="/webmuseum/exibicao?id=2">
 						<div class="fa fa-undo"></div>
 						Voltar
 					</a>

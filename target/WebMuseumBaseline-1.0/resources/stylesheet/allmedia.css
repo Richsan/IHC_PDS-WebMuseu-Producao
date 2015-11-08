@@ -125,12 +125,61 @@ header #headerMenuLink #headerMenuBars
 	display: block;
 }
 
+#headerSidr
+{
+	height: 100%;
+}
 
 #titleObject
 {
     text-align: center;
     color: black;
     text-shadow: 1px 1px 0px #fff;
+}
+
+#galeriaArea
+{
+	text-align: right;
+	width: 100%;
+	margin-top: 35px;
+}
+
+#galeriaArea #galeriaBt
+{
+	background-color: #6D1F18;
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+	
+	font-size: 170%;
+	text-decoration: none;
+	padding: 0.25em 0.35em 0.25em 0.35em;
+	
+}
+
+#sidr-id-galeriaContainer
+{
+	width: 100%;
+	height: 100%;
+}
+
+.sidr-class-galeriaItem
+{
+	display: inline-block;
+    width: 73px;
+    height: 73px;
+    margin-left: 2.5%;
+	margin-top: 2.5%;
+    background-position: center center;
+    background-size: cover;
+}
+
+.sidr-class-galeriaItem img
+{
+	display: block;
+    min-width: 100%;
+    min-height: 100%;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 #menuObject
@@ -180,6 +229,12 @@ header #headerMenuLink #headerMenuBars
     display: block;
 }
 
+#slideArea
+{
+	margin: auto;
+	max-width: 400px !important;
+}
+
 #slide
 {
     margin: 0;
@@ -190,7 +245,7 @@ header #headerMenuLink #headerMenuBars
 	padding-left: 5%;
 	padding-right: 5%;
     max-width: 400px !important;
-    margin-bottom: 2%;
+    margin-bottom: 4% !important;
 }
 
 .bx-wrapper .bx-viewport
