@@ -11,6 +11,7 @@ function main()
 }
 function fechar()
 {
+	 window.onscroll=function(){};
 	overlay.hide();
 }
 function desajustarImg()
@@ -18,6 +19,10 @@ function desajustarImg()
 	var img = document.getElementById("imgView");
 	img.style.width = img.naturalWidth + "px";
 	img.style.height = img.naturalHeight + "px";
+	$("#imgView").css('max-height','none');
+	$("#imgView").css('max-width','none');
+	$(".imgHolder").css('display', 'block');
+	$(".imgHolder").css('align-items', 'top');
 	var bt = document.getElementById("resizeBt");
 	bt.innerHTML = "Ajustar";
 	bt.onclick = ajustarImg;
@@ -25,10 +30,13 @@ function desajustarImg()
 }
 function ajustarImg()
 {
-	var img = document.getElementById("imgView");
-	img.style.width = "100%";
-	img.style.height = "100%";
-	var bt = document.getElementById("resizeBt")
+	$("#imgView").css('height','auto');
+	$("#imgView").css('width','auto');
+	$("#imgView").css('max-height','100%');
+	$("#imgView").css('max-width','100%');
+	$(".imgHolder").css('display', 'flex');
+	$(".imgHolder").css('align-items', 'center');
+	var bt = document.getElementById("resizeBt");
 	bt.innerHTML = "Tamanho Original";
 	bt.onclick = desajustarImg;
 }
@@ -38,6 +46,8 @@ function visualizar()
 	console.log("visu");
 	overlay.show();
 	$(document).scrollTop(0);
+	
+	window.onscroll=function(){window.scrollTo(0, 0);};
 }
 
 function selectSlide(num)

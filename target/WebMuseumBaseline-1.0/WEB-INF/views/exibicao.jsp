@@ -36,7 +36,7 @@
 				<div id="window">
 					<button type="button" id="resizeBt" class="btOverlay">Ajustar</button>
 					<button type="button" id="closeBt" class="btOverlay">x</button>
-					<div class="img">
+					<div class="imgHolder">
 						<img src="resources/img/${objList.get(0).getUrlAddress()}" id="imgView"></img>
 					</div>
 				</div>
@@ -72,21 +72,27 @@
 				</c:forEach>
 
 				<!-- botão da galeria em baixo do slide -->
-				<div id="galeriaArea">
+				<div id="galeriaBtArea">
 					<a id="galeriaBt" href="#galeriaSidr">
-						<div class="fa fa-th""></div>
+						<i class="fa fa-th""></i>
 					</a>
 				</div>
 			</div>
 			
 			<!-- menu galeria -->
 			<div id="galeriaSidr">
+
 				<div id="galeriaContainer">
+					<img id="closeIcon" src="resources/slide-in-right.png" onclick="$.sidr('close', 'galeriaSidr');">
+					
 					<c:set var="count" value="0" scope="page" />
 					<c:forEach items="${objList}" var="obj">
-						<a class="galeriaItem" onclick="selectSlide(${count});"> <!--href="/webmuseum/exibicao?id=${id}&imgId=${count}">-->
-							<img src="resources/img/${obj.getUrlAddress()}" id="img${count}">
-						</a>
+						<div class="galeriaItem">
+							<a onclick="selectSlide(${count});"> <!--href="/webmuseum/exibicao?id=${id}&imgId=${count}">-->
+								<img src="resources/img/${obj.getUrlAddress()}" id="img${count}">
+								<figcaption> ${obj.getName()} </figcaption>
+							</a>
+						</div>
 
 						<c:set var="count" value="${count + 1}" scope="page"/>
 					</c:forEach>
@@ -102,28 +108,28 @@
 				<ul>
 					<li>
 						<a class="iconTextObject" onclick="visualizar();">
-							<div class="fa fa-eye objectIcon"></div>
+							<i class="fa fa-eye objectIcon"></i>
 							Ver
 						</a>
 					</li>
 					
 					<li>
 						<a class="iconTextObject" href="/webmuseum/info/?obj=${objList.get(0).getId()}&cenarioId=${id}" id="info">
-							<div class="fa fa-info-circle"></div>
+							<i class="fa fa-info-circle"></i>
 							Info
 						</a>
 					</li>
 					
 					<li>
 						<a class="iconTextObject" href="/webmuseum/text?id=${objList.get(0).getId()}" id="ler">
-							<div class="fa fa-book"></div>
+							<i class="fa fa-book"></i>
 							Ler
 						</a>
 					</li>
 					
 					<li>
 						<a class="iconTextObject" href="texto0.htm" id="desafio">
-							<div class="fa fa-puzzle-piece"></div>
+							<i class="fa fa-puzzle-piece"></i>
 							Desafio
 						</a>
 					</li>

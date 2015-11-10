@@ -32,7 +32,7 @@ Dento das Vanguardas Européias a tela está dentro do Expressionismo.</p>
 			<ul>
 				<li>
 					<a class="iconTextObject" href="/webmuseum/exibicao?id=2">
-						<div class="fa fa-undo"></div>
+						<i class="fa fa-undo"></i>
 						Voltar
 					</a>
 				</li>

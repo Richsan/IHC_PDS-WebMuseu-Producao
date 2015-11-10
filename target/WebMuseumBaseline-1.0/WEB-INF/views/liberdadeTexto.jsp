@@ -47,7 +47,7 @@
 			<ul>
 				<li>
 					<a class="iconTextObject" href="/webmuseum/exibicao?id=1">
-						<div class="fa fa-undo"></div>
+						<i class="fa fa-undo"></i>
 						Voltar
 					</a>
 				</li>

@@ -3,7 +3,7 @@
 	
 	<a id="headerMenuLink" href="#headerSidr">
 		Menu
-		<div class="fa fa-bars" id="headerMenuBars"></div>
+		<i class="fa fa-bars" id="headerMenuBars"></i>
 	</a>
 </header>
 
