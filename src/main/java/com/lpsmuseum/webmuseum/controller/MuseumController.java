@@ -72,16 +72,15 @@ public class MuseumController
 	@RequestMapping("info")
 	public ModelAndView info(Long cenarioId, Long imgId, Long slidePos)
 	{
-		AnnotationService s = new AnnotationService();
-		ImageService serv = new ImageService();
+		ImageService imgSvc = new ImageService();
+		Image img = imgSvc.findById(imgId);
 		
-		Image ob = serv.findById(imgId);
-
-		List<Annotation> a = s.listByObject(imgId);
+		AnnotationService annSvc = new AnnotationService();
+		List<Annotation> a = annSvc.listByObject(imgId);
+		
 		ModelAndView mv = new ModelAndView("info");
-		
 		mv.addObject("obj", a.get(0));
-		mv.addObject("name", ob.getName());
+		mv.addObject("name", img.getName());
 		mv.addObject("cenarioId", cenarioId);
 		mv.addObject("imgId", imgId);
 		mv.addObject("slidePos", slidePos);
@@ -94,9 +93,6 @@ public class MuseumController
 	{
 		MuseologicalObjectService moSvc = new MuseologicalObjectService();
 		MuseologicalObject mObj = moSvc.findById(imgId);
-
-		ScenarioService serv = new ScenarioService();
-		Scenario s = serv.findById(imgId);
 
 		ModelAndView mv = new ModelAndView("textoObra");
 		mv.addObject("title", mObj.getName());

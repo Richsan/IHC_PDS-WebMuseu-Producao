@@ -43,7 +43,13 @@ CREATE TABLE `annotation` (
 
 LOCK TABLES `annotation` WRITE;
 /*!40000 ALTER TABLE `annotation` DISABLE KEYS */;
-INSERT INTO `annotation` VALUES (1,'Leonardo Da Vinci','<p><b>Artista:</b> Leonardo da Vinci</p>\r <p><b>Material:</b> Tinta a óleo</p>\r <p><b>Dimensões:</b> 77 cm x 53 cm</p>\r <p><b>Localização:</b> Museu do Louvre (desde 1797)</p>\r <p><b>Criação:</b> 1503–1517</p>\r <p><b>Período:</b> Renascimento</p>','monalisa',1,1),(2,'Edvard Munch','<p><b>Artista:</b>Edvard Munch</p><p><b>Material:</b>Óleo sobre tela, Têmpera e Pastel</p><p><b>Dimensões:</b>91 cm x 74 cm</p><p><b>Localização:</b>Galeria Nacional, Oslo</p><p><b>Criação:</b> 1893</p><p><b>Período:</b>Expressionismo</p>','grito',1,2),(3,'Eugene Delacroix','<p><b>Artista:</b>Eugène Delacroix</p><p><b>Material:</b> Tinta a óleo</p><p><b>Dimensões:</b>2,60 m x 3,2 m</p><p><b>Localização:</b>Museu do Louvre (1874–2012)</p><p><b>Criação:</b> 1830</p><p><b>Período:</b>Romantismo</p>','liberdade',1,3),(4,'Cândido Portinari','<p><b>Artista:</b>Cândido Portinari</p><p><b>Material:</b>Óleo sobre tela</p><p><b>Dimensões:</b>182 x 190 cm</p><p><b>Localização:</b> Museu de Arte de São Paulo (MASP)</p><p><b>Criação:</b>1944</p><p><b>Período:</b>Expressionismo</p>','criancamorta',1,4),(5,'Tarsila do Amaral','<p><b>Artista:</b>Tarsila do Amaral</p><p><b>Material:</b>Óleo sobre tela</p><p><b>Dimensões:</b>150 X 205cm</p><p><b>Localização:</b> Palácio Boa Vista - SP</p><p><b>Criação:</b>1933</p><p><b>Período:</b>Expressionismo</p>','operarios',1,5),(6,'Tarsila do Amaral','<p><b>Artista:</b>Tarsila do Amaral</p><p><b>Material:</b>Óleo sobre tela</p><p><b>Dimensões:</b>85cm × 72cm</p><p><b>Localização:</b>Museu de Arte Latino-americana de Buenos Aires</p><p><b>Criação:</b>1928</p><p><b>Período:</b>Modernismo</p>','abaporu',1,6),(7,'Anita Malfatti','<p><b>Artista:</b>Anita Malfatti</p><p><b>Material:</b>Óleo sobre tela</p><p><b>Dimensões:</b>88cm x 115cm</p><p><b>Localização:</b>Col. Pedro Tassinari Filho - SP</p><p><b>Criação:</b>1927</p><p><b>Período:</b>Pós-impressionismo</p>','larentree',1,7);
+INSERT INTO `annotation` VALUES (1,'Leonardo Da Vinci','<p><b>Artista:</b> Leonardo da Vinci</p>\r <p><b>Material:</b> Tinta a óleo</p>\r <p><b>Dimensões:</b> 77 cm x 53 cm</p>\r <p><b>Localização:</b> Museu do Louvre (desde 1797)</p>\r <p><b>Criação:</b> 1503–1517</p>\r <p><b>Período:</b> Renascimento</p>','monalisa',1,1),
+                                (2,'Edvard Munch','<p><b>Artista:</b>Edvard Munch</p><p><b>Material:</b>Óleo sobre tela, Têmpera e Pastel</p><p><b>Dimensões:</b>91 cm x 74 cm</p><p><b>Localização:</b>Galeria Nacional, Oslo</p><p><b>Criação:</b> 1893</p><p><b>Período:</b>Expressionismo</p>','grito',1,2),
+                                (3,'Eugene Delacroix','<p><b>Artista:</b>Eugène Delacroix</p><p><b>Material:</b> Tinta a óleo</p><p><b>Dimensões:</b>2,60 m x 3,2 m</p><p><b>Localização:</b>Museu do Louvre (1874–2012)</p><p><b>Criação:</b> 1830</p><p><b>Período:</b>Romantismo</p>','liberdade',1,3),
+                                (4,'Cândido Portinari','<p><b>Artista:</b>Cândido Portinari</p><p><b>Material:</b>Óleo sobre tela</p><p><b>Dimensões:</b>182 x 190 cm</p><p><b>Localização:</b> Museu de Arte de São Paulo (MASP)</p><p><b>Criação:</b>1944</p><p><b>Período:</b>Expressionismo</p>','criancamorta',1,4),
+                                (5,'Tarsila do Amaral','<p><b>Artista:</b>Tarsila do Amaral</p><p><b>Material:</b>Óleo sobre tela</p><p><b>Dimensões:</b>150 X 205cm</p><p><b>Localização:</b> Palácio Boa Vista - SP</p><p><b>Criação:</b>1933</p><p><b>Período:</b>Expressionismo</p>','operarios',1,5),
+                                (6,'Tarsila do Amaral','<p><b>Artista:</b>Tarsila do Amaral</p><p><b>Material:</b>Óleo sobre tela</p><p><b>Dimensões:</b>85cm × 72cm</p><p><b>Localização:</b>Museu de Arte Latino-americana de Buenos Aires</p><p><b>Criação:</b>1928</p><p><b>Período:</b>Modernismo</p>','abaporu',1,6),
+                                (7,'Anita Malfatti','<p><b>Artista:</b>Anita Malfatti</p><p><b>Material:</b>Óleo sobre tela</p><p><b>Dimensões:</b>88cm x 115cm</p><p><b>Localização:</b>Col. Pedro Tassinari Filho - SP</p><p><b>Criação:</b>1927</p><p><b>Período:</b>Pós-impressionismo</p>','larentree',1,7);
 /*!40000 ALTER TABLE `annotation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +161,13 @@ CREATE TABLE `museological_object` (
 
 LOCK TABLES `museological_object` WRITE;
 /*!40000 ALTER TABLE `museological_object` DISABLE KEYS */;
-INSERT INTO `museological_object` VALUES ('ImageDO',1,'2015-10-14','Monalisa','','monalisaTexto.txt','monalisa.jpg'),('ImageDO',2,'2015-10-14','O Grito','','gritoTexto.txt','grito.jpg'),('ImageDO',3,'2015-10-14','A Liberdade Guiando o Povo','','liberdadeTexto.txt','liberdade.png'),('ImageDO',4,'2015-11-07','Criança Morta','','criancamortaTexto.txt','criancaMorta.jpg'),('ImageDO',5,'2015-11-07','Operários','','operariosTexto.txt','operarios.jpg'),('ImageDO',6,'2015-11-07','Abaporu','','abaporuTexto.txt','abaporu.jpg'),('ImageDO',7,'2015-11-07','La Rentrée','','larentreeTexto.txt','larentree.jpg');
+INSERT INTO `museological_object` VALUES  ('ImageDO',1,'2015-10-14','Monalisa','','monalisaTexto.txt','monalisa.jpg'),
+                                          ('ImageDO',2,'2015-10-14','O Grito','','gritoTexto.txt','grito.jpg'),
+                                          ('ImageDO',3,'2015-10-14','A Liberdade Guiando o Povo','','liberdadeTexto.txt','liberdade.png'),
+                                          ('ImageDO',4,'2015-11-07','Criança Morta','','criancamortaTexto.txt','criancaMorta.jpg'),
+                                          ('ImageDO',5,'2015-11-07','Operários','','operariosTexto.txt','operarios.jpg'),
+                                          ('ImageDO',6,'2015-11-07','Abaporu','','abaporuTexto.txt','abaporu.jpg'),
+                                          ('ImageDO',7,'2015-11-07','La Rentrée','','larentreeTexto.txt','larentree.jpg');
 /*!40000 ALTER TABLE `museological_object` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -210,7 +222,8 @@ CREATE TABLE `scenario` (
 
 LOCK TABLES `scenario` WRITE;
 /*!40000 ALTER TABLE `scenario` DISABLE KEYS */;
-INSERT INTO `scenario` VALUES ('ScenarioDO',1,'Grandes Obras Conhecidas',1,1),('ScenarioDO',2,'Obras Brasileiras',1,1);
+INSERT INTO `scenario` VALUES ('ScenarioDO',1,'Grandes Obras Conhecidas',1,1),
+                              ('ScenarioDO',2,'Obras Brasileiras',1,1);
 /*!40000 ALTER TABLE `scenario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -237,7 +250,8 @@ CREATE TABLE `scenario_object` (
 
 LOCK TABLES `scenario_object` WRITE;
 /*!40000 ALTER TABLE `scenario_object` DISABLE KEYS */;
-INSERT INTO `scenario_object` VALUES (1,1),(1,2),(1,3),(2,4),(2,5),(2,6),(2,7);
+INSERT INTO `scenario_object` VALUES  (1,1),(1,2),(1,3),
+                                      (2,4),(2,5),(2,6),(2,7);
 /*!40000 ALTER TABLE `scenario_object` ENABLE KEYS */;
 UNLOCK TABLES;
 
