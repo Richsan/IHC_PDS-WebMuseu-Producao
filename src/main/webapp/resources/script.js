@@ -1,6 +1,7 @@
 var overlay;
 
 var slide;
+var slidePos = 0;
 
 function main()
 {
@@ -62,6 +63,7 @@ function docReady()
     function slideTransition(_, _, newIdx)
 	{
 		var info, text, name, view;
+		slidePos = newIdx;
 
 		info = document.getElementById("info");
 		text = document.getElementById("ler");
@@ -69,8 +71,8 @@ function docReady()
 		name = document.getElementById("titleObject");
 		imgUrl = document.getElementById("img" + newIdx).src;
 		
-		info.href = "/webmuseum/info/?obj=" + document.getElementById("objCode" + newIdx).innerHTML+"&cenarioId="+cenarioId;
-		text.href = "/webmuseum/text?id=" + document.getElementById("objCode" + newIdx).innerHTML;
+		info.href = "/webmuseum/info?cenarioId="+cenarioId+"&imgId=" + document.getElementById("objCode" + newIdx).innerHTML+"&slidePos="+slidePos+"";
+		text.href = "/webmuseum/text?cenarioId="+cenarioId+"&imgId=" + document.getElementById("objCode" + newIdx).innerHTML+"&slidePos="+slidePos+"";
 		view.src = imgUrl;
 
 
@@ -81,17 +83,16 @@ function docReady()
 	var init = parseInt(document.getElementById("start").innerHTML);
 	slide = $('#slide').bxSlider(
 			{
-				startSlide: imgId,
 				responsive: true,
 				touchEnabled: true,
 				infiniteLoop: false,
 				adaptiveHeight: true,
 				hideControlOnEnd: true,
-				buildPager: function () {
-					return "";
-				},
+				pager: false,
 				onSlideBefore: slideTransition
 			});
+			
+	selectSlide(slidePos);
 }
 $(document).ready(docReady);
 window.onload = main;

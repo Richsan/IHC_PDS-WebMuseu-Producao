@@ -17,11 +17,6 @@
 	</head>
 	
 	<body>
-		<script>
-			var cenarioId = ${id};
-			var imgId = ${imgId};
-		</script>
-		
 		<div id="wraper">
 			<%@ include file="include/headerMenu.jsp" %>
 			
@@ -36,7 +31,7 @@
 			<section id="menuObject">
 				<ul>
 					<li>
-						<a class="iconTextObject" href="/webmuseum/exibicao?id=${cenarioId}">
+						<a class="iconTextObject" href="/webmuseum/exibicao?id=${cenarioId}&slidePos=${slidePos}">
 							<i class="fa fa-undo"></i>
 							Voltar
 						</a>

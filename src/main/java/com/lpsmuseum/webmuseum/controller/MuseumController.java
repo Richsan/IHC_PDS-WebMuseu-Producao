@@ -24,66 +24,95 @@ import java.util.Calendar;
 import java.util.List;
 
 @Controller
-public class MuseumController {
+public class MuseumController
+{
 
-    MuseumService service = new MuseumService();
-    
-    @RequestMapping("/")
-    public ModelAndView startApp(Long id){
-        return new ModelAndView("index");
-    }
-    
-    @RequestMapping("exibicao")
-    public ModelAndView exibicao(Long id, Long imgId) {
-        
-       //Museum m = service.findById(new Long(0));
-        ScenarioService serv = new ScenarioService();
-        Scenario s = serv.findById(id);
-        List<MuseologicalObject> list = s.getObjects();
-        ModelAndView mv = new ModelAndView("exibicao");
-        mv.addObject("objList", list);
-        if(id != null)
-            mv.addObject("id", id);
-        else
-            mv.addObject("id", 1);
+	MuseumService service = new MuseumService();
+
+	@RequestMapping("/")
+	public ModelAndView startApp(Long id)
+	{
+		return new ModelAndView("index");
+	}
+
+	@RequestMapping("exibicao")
+	public ModelAndView exibicao(Long id, Long slidePos)
+	{
+
+		//Museum m = service.findById(new Long(0));
+		ScenarioService serv = new ScenarioService();
+		Scenario s = serv.findById(id);
+
+		List<MuseologicalObject> list = s.getObjects();
+
+		ModelAndView mv = new ModelAndView("exibicao");
+		mv.addObject("objList", list);
+
+		if(id != null)
+		{
+			mv.addObject("id", id);
+		}
+		else
+		{
+			mv.addObject("id", 1);
+		}
+
+		if(slidePos != null)
+		{
+			mv.addObject("slidePos", slidePos);
+		}
+		else
+		{
+			mv.addObject("slidePos", 0);
+		}
+
+		return mv;
+	}
+
+	@RequestMapping("info")
+	public ModelAndView info(Long cenarioId, Long imgId, Long slidePos)
+	{
+		AnnotationService s = new AnnotationService();
+		ImageService serv = new ImageService();
 		
-		if(imgId != null)
-            mv.addObject("imgId", imgId);
-        else
-            mv.addObject("imgId", 0);
-                    
-        return mv;
-    }
-    
-    @RequestMapping("info")
-    public ModelAndView info(Long obj, Long cenarioId)
-    {
-        AnnotationService s = new AnnotationService();
-        ImageService serv = new ImageService();
-        Image ob = serv.findById(obj);
-        List<Annotation> a = s.listByObject(obj);
-        ModelAndView mv = new ModelAndView("info");
-        mv.addObject("obj",a.get(0));
-        mv.addObject("cenarioId",cenarioId);
-        mv.addObject("name",ob.getName());
-        mv.addObject("id",obj);
-        return mv;
-    }
-    @RequestMapping("text")
-    public ModelAndView text(Long id)
-    {
-        AnnotationService s = new AnnotationService();
-        List<Annotation> a = s.listByObject(id);
-        ModelAndView mv = new ModelAndView(a.get(0).getTitle()+"Texto");
-        return mv;
-    }
+		Image ob = serv.findById(imgId);
 
-    @RequestMapping("cenarios")
-    public ModelAndView cenarios()
-    {
-        List<Scenario> listaCenarios = service.listScenariosByMuseumId(1l);
-        ModelAndView mv = new ModelAndView("cenarios");
-        mv.addObject("listaCenarios", listaCenarios);
-        return mv;
-    }
+		List<Annotation> a = s.listByObject(imgId);
+		ModelAndView mv = new ModelAndView("info");
+		
+		mv.addObject("obj", a.get(0));
+		mv.addObject("name", ob.getName());
+		mv.addObject("cenarioId", cenarioId);
+		mv.addObject("imgId", imgId);
+		mv.addObject("slidePos", slidePos);
+
+		return mv;
+	}
+
+	@RequestMapping("text")
+	public ModelAndView text(Long cenarioId, Long imgId, Long slidePos)
+	{
+		MuseologicalObjectService moSvc = new MuseologicalObjectService();
+		MuseologicalObject mObj = moSvc.findById(imgId);
+
+		ScenarioService serv = new ScenarioService();
+		Scenario s = serv.findById(imgId);
+
+		ModelAndView mv = new ModelAndView("textoObra");
+		mv.addObject("title", mObj.getName());
+		mv.addObject("text", ((Image) mObj).getDescription());
+		mv.addObject("cenarioId", cenarioId);
+		mv.addObject("imgId", imgId);
+		mv.addObject("slidePos", slidePos);
+		return mv;
+	}
+
+	@RequestMapping("cenarios")
+	public ModelAndView cenarios()
+	{
+		List<Scenario> listaCenarios = service.listScenariosByMuseumId(1l);
+		ModelAndView mv = new ModelAndView("cenarios");
+		mv.addObject("listaCenarios", listaCenarios);
+		return mv;
+	}
 }

@@ -25,8 +25,8 @@
 
 	<body>
 		<script>
-			var cenarioId = ${id};
-			var imgId = ${imgId};
+			cenarioId = ${id};
+			slidePos = ${slidePos};
 		</script>
 		
 		<a hidden="true" id="start">${id}</a>
@@ -114,14 +114,14 @@
 					</li>
 					
 					<li>
-						<a class="iconTextObject" href="/webmuseum/info/?obj=${objList.get(0).getId()}&cenarioId=${id}" id="info">
+						<a class="iconTextObject" href="/webmuseum/info?cenarioId=${id}&imgId=${objList.get(0).getId()}&slidePos=${slidePos}" id="info">
 							<i class="fa fa-info-circle"></i>
 							Info
 						</a>
 					</li>
 					
 					<li>
-						<a class="iconTextObject" href="/webmuseum/text?id=${objList.get(0).getId()}" id="ler">
+						<a class="iconTextObject" href="/webmuseum/text?cenarioId=${id}&imgId=${objList.get(0).getId()}&slidePos=${slidePos}" id="ler">
 							<i class="fa fa-book"></i>
 							Ler
 						</a>

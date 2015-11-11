@@ -155,7 +155,7 @@ CREATE TABLE `museological_object` (
 
 LOCK TABLES `museological_object` WRITE;
 /*!40000 ALTER TABLE `museological_object` DISABLE KEYS */;
-INSERT INTO `museological_object` VALUES ('ImageDO',1,'2015-10-14','Monalisa','','monalisaTexto.jsp','monalisa.jpg'),('ImageDO',2,'2015-10-14','O Grito','','gritoTexto.jsp','grito.jpg'),('ImageDO',3,'2015-10-14','A Liberdade Guiando o Povo','','liberdadeTexto.jsp','liberdade.png'),('ImageDO',4,'2015-11-07','Criança Morta','','criancamortaTexto.jsp','criancaMorta.jpg'),('ImageDO',5,'2015-11-07','Operários','','operariosTexto.jsp','operarios.jpg'),('ImageDO',6,'2015-11-07','Abaporu','','abaporuTexto.jsp','abaporu.jpg'),('ImageDO',7,'2015-11-07','La Rentrée','','larentreeTexto.jsp','larentree.jpg');
+INSERT INTO `museological_object` VALUES ('ImageDO',1,'2015-10-14','Monalisa','','monalisaTexto.txt','monalisa.jpg'),('ImageDO',2,'2015-10-14','O Grito','','gritoTexto.txt','grito.jpg'),('ImageDO',3,'2015-10-14','A Liberdade Guiando o Povo','','liberdadeTexto.txt','liberdade.png'),('ImageDO',4,'2015-11-07','Criança Morta','','criancamortaTexto.txt','criancaMorta.jpg'),('ImageDO',5,'2015-11-07','Operários','','operariosTexto.txt','operarios.jpg'),('ImageDO',6,'2015-11-07','Abaporu','','abaporuTexto.txt','abaporu.jpg'),('ImageDO',7,'2015-11-07','La Rentrée','','larentreeTexto.txt','larentree.jpg');
 /*!40000 ALTER TABLE `museological_object` ENABLE KEYS */;
 UNLOCK TABLES;
 
