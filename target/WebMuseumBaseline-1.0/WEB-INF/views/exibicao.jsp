@@ -102,7 +102,7 @@
 			<script>
 				$('#galeriaBt').sidr({name: 'galeriaSidr', side: 'right', source: '#galeriaSidr'});
 			</script>
-				
+
 			<!-- menu inferior -->
 			<section id="menuObject">
 				<ul>
