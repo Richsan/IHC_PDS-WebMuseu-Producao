@@ -8,8 +8,12 @@
 </header>
 
 <div id="headerSidr">
+	<div id="closeIconHolder">
+		<img class="closeIcon" src="resources/slide-in-left.png" onclick="$.sidr('close', 'headerSidr');">
+	</div>
+
 	<ul>
-		<li class="active"><a href="/webmuseum/">Home</a></li>
+		<li><a href="/webmuseum/">Home</a></li>
 		<li><a href="/webmuseum/cenarios">Exibições</a></li>
 	</ul>
 </div>

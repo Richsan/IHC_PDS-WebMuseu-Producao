@@ -83,7 +83,7 @@
 			<div id="galeriaSidr">
 
 				<div id="galeriaContainer">
-					<img id="closeIcon" src="resources/slide-in-right.png" onclick="$.sidr('close', 'galeriaSidr');">
+					<img class="closeIcon" src="resources/slide-in-right.png" onclick="$.sidr('close', 'galeriaSidr');">
 					
 					<c:set var="count" value="0" scope="page" />
 					<c:forEach items="${objList}" var="obj">

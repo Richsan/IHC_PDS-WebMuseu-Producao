@@ -1,17 +1,19 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/webmuseom/resources/opensans.woff') format('woff');
+}
+
 body
 {
-    /* -ms-word-break: break-all;
-    word-break: break-all;
-
-     Non standard for webkit 
-    word-break: break-word;
-
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;*/
     background-color: #CFC9B2;
     height: 100%;
+}
+
+*
+{
+	font-family: 'Open Sans', sans-serif;
 }
 
 #window
@@ -26,7 +28,7 @@ body
 
 #closeBt
 {
-    background-color: #CC181E;
+    background-color: #6D1F18;
     float: right;
     border-radius:50px;
 	cursor: pointer;
@@ -34,7 +36,7 @@ body
 
 #resizeBt
 {
-    background-color: gray;
+    background-color: #6D1F18;
     width: 35%;
 	border-radius:50px;
 	cursor: pointer;
@@ -88,7 +90,7 @@ body
 
 header
 {
-    background-color: #004242;
+    background-color: #066158;
     padding-top: 0.5em;
     padding-bottom: 1.5em;
     padding-right: 1em;
@@ -160,6 +162,28 @@ header #headerMenuLink #headerMenuBars
 	right: -90%;
 }
 
+#headerSidr {
+	max-width: 90% !important;
+}
+
+#headerSidr.left {
+	right: -90%;
+}
+
+#headerSidr #closeIconHolder
+{
+	text-align: right;
+	margin: 20px 20px 30px 0px;
+}
+
+#headerSidr #closeIconHolder .closeIcon
+{
+	width:  50px;
+	height: 50px;
+	
+	cursor: pointer;
+}
+
 .sidr-inner
 {
 	width: 100%;
@@ -171,14 +195,13 @@ header #headerMenuLink #headerMenuBars
 	padding: 15px 0px 15px 15px;
 }
 
-#sidr-id-closeIcon
+.sidr-class-closeIcon
 {
 	width:  50px;
 	height: 50px;
 	
-	margin: 11px 0px 60px 11px;
-	
 	display: block;
+	margin: 5px 0px 50px 5px;
 	cursor: pointer;
 }
 
@@ -206,7 +229,7 @@ header #headerMenuLink #headerMenuBars
 	display: block;
 	margin: auto;
 	padding: 3px 3px 3px 3px;
-	background-color: #006767;
+	background-color: #009292;
 }
 
 .sidr-class-galeriaItem a figcaption
@@ -289,7 +312,7 @@ header #headerMenuLink #headerMenuBars
 
 #listaCenarios
 {
-	margin-top: 60px;
+	margin-top: 50px;
 }
 
 #listaCenarios ul
@@ -301,18 +324,19 @@ header #headerMenuLink #headerMenuBars
     list-style: none;
     padding-left: 0;
 }
-#listaCenarios ul a
+#listaCenarios ul li a
 {
     text-decoration: none;
+    color: #fff;
 }
 #listaCenarios ul li
 {
 	margin-bottom:2em;
-	padding-top: 1.3em;
-    height: 40px;
+	padding: 8% 7% 8% 7%;
+    
+	font-size: 130%;
 
     background-color: #004242;
-    color: #fff;
 
     text-shadow: 1px 1px 1px #000;
 	text-align: center;

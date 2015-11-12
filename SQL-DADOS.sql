@@ -61,10 +61,11 @@ DROP TABLE IF EXISTS `answer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `answer` (
+  `DTYPE` varchar(31) NOT NULL,
   `id_answer` bigint(20) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_answer`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,20 +85,13 @@ DROP TABLE IF EXISTS `challenge`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `challenge` (
-  `DTYPE` varchar(31) NOT NULL,
   `id_challenge` bigint(20) NOT NULL AUTO_INCREMENT,
-  `answer` varchar(255) DEFAULT NULL,
+--  `answer` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `id_scenario` bigint(20) DEFAULT NULL,
-  `id_objectanswer` bigint(20) DEFAULT NULL,
-  `id_objectquestion` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id_challenge`),
   KEY `FK_d5n0l22v5g91plim7pfouyusf` (`id_scenario`),
-  KEY `FK_syheraxs5guij6prfvimbjptf` (`id_objectanswer`),
-  KEY `FK_4gihke2uu13dc4j34aq3fjv17` (`id_objectquestion`),
-  CONSTRAINT `FK_4gihke2uu13dc4j34aq3fjv17` FOREIGN KEY (`id_objectquestion`) REFERENCES `museological_object` (`id_object`),
   CONSTRAINT `FK_d5n0l22v5g91plim7pfouyusf` FOREIGN KEY (`id_scenario`) REFERENCES `scenario` (`id_scenario`),
-  CONSTRAINT `FK_syheraxs5guij6prfvimbjptf` FOREIGN KEY (`id_objectanswer`) REFERENCES `museological_object` (`id_object`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -108,6 +102,28 @@ CREATE TABLE `challenge` (
 LOCK TABLES `challenge` WRITE;
 /*!40000 ALTER TABLE `challenge` DISABLE KEYS */;
 /*!40000 ALTER TABLE `challenge` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `challenge_answer`
+--
+
+DROP TABLE IF EXISTS `challenge_answer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `challenge_answer` (
+  `id_challenge` bigint(20) NOT NULL,
+  `id_answer` bigint(20) NOT NULL,
+  KEY `FK_62pllanja13j1smajhm93hyyu` (`id_answer`),
+  KEY `FK_sxa37acu11nk3sdfun3rd4tw5` (`id_challenge`),
+  CONSTRAINT `FK_62pllanja13j1smajhm93hyyu` FOREIGN KEY (`id_answer`) REFERENCES `answer` (`id_answer`),
+  CONSTRAINT `FK_sxa37acu11nk3sdfun3rd4tw5` FOREIGN KEY (`id_challenge`) REFERENCES `challenge` (`id_challenge`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `challenge_answer` WRITE;
+/*!40000 ALTER TABLE `challenge_answer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `challenge_answer` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

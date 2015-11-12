@@ -30,9 +30,11 @@
 			<section id="listaCenarios">
 				<ul>
 					<c:forEach items="${listaCenarios}" var="obj">
-						<a href="/webmuseum/exibicao?id=${obj.getId()}">
-							<li> ${obj.getName()} </li>
-						</a>
+						<li>
+							<a href="/webmuseum/exibicao?id=${obj.getId()}">
+								${obj.getName()}
+							</a>
+						</li>
 					</c:forEach>
 				</ul>
 			</section>
