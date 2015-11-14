@@ -91,7 +91,7 @@ CREATE TABLE `challenge` (
   `id_scenario` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id_challenge`),
   KEY `FK_d5n0l22v5g91plim7pfouyusf` (`id_scenario`),
-  CONSTRAINT `FK_d5n0l22v5g91plim7pfouyusf` FOREIGN KEY (`id_scenario`) REFERENCES `scenario` (`id_scenario`),
+  CONSTRAINT `FK_d5n0l22v5g91plim7pfouyusf` FOREIGN KEY (`id_scenario`) REFERENCES `scenario` (`id_scenario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
