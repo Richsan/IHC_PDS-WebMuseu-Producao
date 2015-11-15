@@ -12,7 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.lpsmuseum.dto.Museum;
 import com.lpsmuseum.dto.Scenario;
 import com.lpsmuseum.dto.object.Image;
+import com.lpsmuseum.dto.scenario.Answer;
+import com.lpsmuseum.dto.scenario.Challenge;
+import com.lpsmuseum.dto.scenario.ScenarioChallenge;
 import com.lpsmuseum.service.AnnotationService;
+import com.lpsmuseum.service.ChallengeService;
 import com.lpsmuseum.service.ImageService;
 import com.lpsmuseum.service.MuseologicalObjectService;
 import com.lpsmuseum.service.MuseumService;
@@ -21,7 +25,10 @@ import com.lpsmuseum.service.builders.MuseologicalObjectBuilder;
 import com.lpsmuseum.service.builders.MuseumBuilder;
 import java.text.ParseException;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 @Controller
 public class MuseumController
@@ -111,4 +118,32 @@ public class MuseumController
 		mv.addObject("listaCenarios", listaCenarios);
 		return mv;
 	}
+        
+        @RequestMapping("desafio")
+	public ModelAndView desafio(Long cenarioId) throws Exception
+        {
+            ChallengeService service = new ChallengeService();
+           List<Challenge> perguntas = new ArrayList<Challenge>();
+                      
+            for(int i = 1; i < 6; i++)
+            {
+                Challenge desafio = service.findById(i+((cenarioId-1)*5));
+                perguntas.add(desafio);
+            }
+            
+            ModelAndView mv = new ModelAndView("desafio");
+            List<Answer> respostas = new LinkedList<Answer>();
+            for(Challenge c : perguntas)
+            {
+                long seed = System.nanoTime();
+                respostas.add(c.getAnswers().get(0));
+           
+                Collections.shuffle(c.getAnswers(), new Random(seed));
+            }
+            
+            mv.addObject("perguntas", perguntas);
+            mv.addObject("respostas",respostas);
+            mv.addObject("idCenario", cenarioId);
+            return mv;
+        }
 }

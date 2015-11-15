@@ -5,7 +5,7 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Objeto Museologico</title>
+		<title>Museu - Home Page</title>
 		<meta name="description" content="" />
 		<meta name="author" content="" />
 		<meta name="viewport" content="width=device-width">

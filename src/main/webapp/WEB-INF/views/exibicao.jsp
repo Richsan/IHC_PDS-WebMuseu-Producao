@@ -128,7 +128,7 @@
 					</li>
 					
 					<li>
-						<a class="iconTextObject" href="texto0.htm" id="desafio">
+						<a class="iconTextObject" href="/webmuseum/desafio?cenarioId=${id}" id="desafio">
 							<i class="fa fa-puzzle-piece"></i>
 							Desafio
 						</a>
