@@ -55,7 +55,7 @@ public class MuseumController
 		ModelAndView mv = new ModelAndView("exibicao");
 		mv.addObject("objList", list);
 
-		if(id != null)
+		if (id != null)
 		{
 			mv.addObject("id", id);
 		}
@@ -64,7 +64,7 @@ public class MuseumController
 			mv.addObject("id", 1);
 		}
 
-		if(slidePos != null)
+		if (slidePos != null)
 		{
 			mv.addObject("slidePos", slidePos);
 		}
@@ -81,10 +81,10 @@ public class MuseumController
 	{
 		ImageService imgSvc = new ImageService();
 		Image img = imgSvc.findById(imgId);
-		
+
 		AnnotationService annSvc = new AnnotationService();
 		List<Annotation> a = annSvc.listByObject(imgId);
-		
+
 		ModelAndView mv = new ModelAndView("info");
 		mv.addObject("obj", a.get(0));
 		mv.addObject("name", img.getName());
@@ -118,32 +118,32 @@ public class MuseumController
 		mv.addObject("listaCenarios", listaCenarios);
 		return mv;
 	}
-        
-        @RequestMapping("desafio")
+
+	@RequestMapping("desafio")
 	public ModelAndView desafio(Long cenarioId) throws Exception
-        {
-            ChallengeService service = new ChallengeService();
-           List<Challenge> perguntas = new ArrayList<Challenge>();
-                      
-            for(int i = 1; i < 6; i++)
-            {
-                Challenge desafio = service.findById(i+((cenarioId-1)*5));
-                perguntas.add(desafio);
-            }
-            
-            ModelAndView mv = new ModelAndView("desafio");
-            List<Answer> respostas = new LinkedList<Answer>();
-            for(Challenge c : perguntas)
-            {
-                long seed = System.nanoTime();
-                respostas.add(c.getAnswers().get(0));
-           
-                Collections.shuffle(c.getAnswers(), new Random(seed));
-            }
-            
-            mv.addObject("perguntas", perguntas);
-            mv.addObject("respostas",respostas);
-            mv.addObject("idCenario", cenarioId);
-            return mv;
-        }
+	{
+		List<Challenge> perguntas = new ArrayList<Challenge>();
+		List<Answer> respostasCorretas = new LinkedList<Answer>();
+		
+		ChallengeService service = new ChallengeService();
+
+		for (int i = 1; i < 6; i++)
+		{
+			Challenge desafio = service.findById(i + ((cenarioId - 1) * 5));
+			perguntas.add(desafio);
+		}
+
+		for (Challenge c : perguntas)
+		{
+			respostasCorretas.add(c.getAnswers().get(0));
+			
+			Collections.shuffle(c.getAnswers(), new Random(System.nanoTime()));
+		}
+
+		ModelAndView mv = new ModelAndView("desafio");
+		mv.addObject("perguntas", perguntas);
+		mv.addObject("respostasCorretas", respostasCorretas);
+		mv.addObject("idCenario", cenarioId);
+		return mv;
+	}
 }
